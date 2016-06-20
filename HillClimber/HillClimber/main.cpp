@@ -13,11 +13,19 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+int fitness(vector<int> &parent);
+
 int main(int argc, const char * argv[]) {
     
-    vector< int > parent(13);
-    vector< int > child(13);
-    vector< int > temp(13);
+    vector<int> parent(13, 0);
+    vector<int> child(13, 0);
+    vector<int> temp(13, 0);
     
     return 0;
+}
+
+//Fitness Function
+int fitness(std::vector<int> &parent)
+{
+    
 }
