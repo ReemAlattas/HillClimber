@@ -21,6 +21,9 @@ int main(int argc, const char * argv[]) {
     vector<int> child(13, 0);
     vector<int> temp(13, 0);
     
+    int fit_parent = fitness(parent);
+    int fit_child = fitness(child);
+    
     return 0;
 }
 
