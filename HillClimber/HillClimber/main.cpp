@@ -27,5 +27,11 @@ int main(int argc, const char * argv[]) {
 //Fitness Function
 int fitness(std::vector<int> &parent)
 {
+    int fit = 0;
     
+    for (int i = 0; i < parent.size(); i++) {
+        fit += parent[i];
+    }
+    
+    return fit;
 }
