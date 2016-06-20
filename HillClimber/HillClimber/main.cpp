@@ -14,7 +14,7 @@ using std::endl;
 using std::vector;
 
 int fitness(vector<int> &parent);
-void make_child(vector<int> &parent);
+void make_child(vector<int> &parent, vector<int> &child);
 
 int main(int argc, const char * argv[]) {
     
@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
     if (fit_child > fit_parent)
     {
         parent = child;
-        make_child(parent);
+        make_child(parent, child);
     }
     
     return 0;
@@ -47,6 +47,9 @@ int fitness(vector<int> &parent)
 }
 
 //Make Child
-void make_child(vector<int> &parent){
-    
+void make_child(vector<int> &parent, vector<int> &child)
+{
+    child = parent;
+    int random = rand() % 13;
+    child[random] = abs(child[random] - 1);
 }
