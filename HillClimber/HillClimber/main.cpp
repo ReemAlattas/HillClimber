@@ -14,6 +14,7 @@ using std::endl;
 using std::vector;
 
 int fitness(vector<int> &parent);
+void make_child(vector<int> &parent);
 
 int main(int argc, const char * argv[]) {
     
@@ -24,11 +25,17 @@ int main(int argc, const char * argv[]) {
     int fit_parent = fitness(parent);
     int fit_child = fitness(child);
     
+    if (fit_child > fit_parent)
+    {
+        parent = child;
+        make_child(parent);
+    }
+    
     return 0;
 }
 
 //Fitness Function
-int fitness(std::vector<int> &parent)
+int fitness(vector<int> &parent)
 {
     int fit = 0;
     
@@ -37,4 +44,9 @@ int fitness(std::vector<int> &parent)
     }
     
     return fit;
+}
+
+//Make Child
+void make_child(vector<int> &parent){
+    
 }
