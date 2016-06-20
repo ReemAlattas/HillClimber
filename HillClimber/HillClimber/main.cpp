@@ -15,7 +15,9 @@ using std::vector;
 
 int main(int argc, const char * argv[]) {
     
-    
+    vector< int > parent(13);
+    vector< int > child(13);
+    vector< int > temp(13);
     
     return 0;
 }
