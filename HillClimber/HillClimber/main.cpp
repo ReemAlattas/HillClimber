@@ -21,15 +21,27 @@ int main(int argc, const char * argv[]) {
     
     vector<int> parent(13, 0);
     vector<int> child(13, 0);
-    vector<int> temp(13, 0);
     
-    int fit_parent = fitness(parent);
-    int fit_child = fitness(child);
+    make_child(parent, child);
     
-    if (fit_child > fit_parent)
+    //Evolve
+    for (int i = 0; i<5; i++)
     {
-        parent = child;
-        make_child(parent, child);
+        cout << "Iteration # " << i << endl;
+        output_vector(parent);
+        output_vector(child);
+        
+        int fit_parent = fitness(parent);
+        int fit_child = fitness(child);
+    
+        cout << "Parent Fitness = " << fit_parent << endl;
+        cout << "Child Fitness = " << fit_child << endl;
+    
+        if (fit_child > fit_parent)
+        {
+            parent = child;
+            make_child(parent, child);
+        }
     }
     
     return 0;
