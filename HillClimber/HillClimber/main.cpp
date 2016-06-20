@@ -13,8 +13,9 @@ using std::endl;
 #include <vector>
 using std::vector;
 
-int fitness(vector<int> &parent);
-void make_child(vector<int> &parent, vector<int> &child);
+int fitness(vector<int> &);
+void make_child(vector<int> &, vector<int> &);
+void output_vector(vector<int> &);
 
 int main(int argc, const char * argv[]) {
     
@@ -52,4 +53,14 @@ void make_child(vector<int> &parent, vector<int> &child)
     child = parent;
     int random = rand() % 13;
     child[random] = abs(child[random] - 1);
+}
+
+//Output Vector
+void output_vector(vector<int> &vec)
+{
+    for (int i = 0; i < vec.size(); i++)
+    {
+        cout << vec[i] << " ";
+    }
+    cout << endl;
 }
