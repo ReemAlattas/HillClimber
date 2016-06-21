@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
     make_child(parent, child);
     
     //Evolve
-    for (int i = 0; i<5; i++)
+    for (int i = 1; i<=25; i++)
     {
         cout << "Iteration # " << i << endl;
         output_vector(parent);
@@ -40,8 +40,8 @@ int main(int argc, const char * argv[]) {
         if (fit_child > fit_parent)
         {
             parent = child;
-            make_child(parent, child);
         }
+        make_child(parent, child);
     }
     
     return 0;
